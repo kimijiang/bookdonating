@@ -9,7 +9,15 @@
 <body>
 <%= link_to "Home", root_path %>
 <%= link_to "About", about_path %>
-<%= yield %>
+
+
+	<div class="container">
+		<% flash.each do |name, msg| %>
+			<%= content_tag(:div, msg, class:"alert alert-#{}") %>
+		<% end %>	
+	</div>
+	
+	<%= yield %>
 
 </body>
 </html>
