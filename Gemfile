@@ -36,6 +36,8 @@ gem "masonry-rails"
 
 gem "aws-sdk"
 
+gem "cancancan", "~> 1.9"
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
