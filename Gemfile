@@ -34,7 +34,7 @@ gem "paperclip"
 
 gem "masonry-rails"
 
-gem "aws-sdk", "< 2.0"
+gem "aws-sdk"
 
 # Use Unicorn as the app server
 # gem 'unicorn'
