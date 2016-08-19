@@ -38,6 +38,8 @@ gem "aws-sdk"
 
 gem "cancancan", "~> 1.9"
 
+gem "newrelic_rpm"
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
