@@ -1,1 +1,0 @@
-json.partial! "add_author_to_books/add_author_to_book", add_author_to_book: @add_author_to_book
