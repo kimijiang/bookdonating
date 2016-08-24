@@ -19,7 +19,10 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-cn:
+zh:
+  intro: "我们的网站可以帮助您将书捐给需要的人"
   signup: "注册"
-
-
+  login: "登录"
+  home: "主页"
+  about: "关于"
+  book: "书籍"

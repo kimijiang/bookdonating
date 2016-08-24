@@ -10,9 +10,9 @@
         <%= book.name %>
         <%= book.isbn %>
         <%= book.user.email if book.user %>
-        <%= link_to 'Show', book %>
-        <%= link_to 'Edit', edit_book_path(book) %>
-        <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Show', book_path(book) if (can? :read, book) %>
+        <%= link_to 'Edit', edit_book_path(book) if (can? :update, book) %>
+        <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } if (can? :destroy, book)%>
       </div>
     </div>
   <% end %>

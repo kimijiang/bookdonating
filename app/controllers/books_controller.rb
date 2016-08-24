@@ -1,10 +1,14 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user! , except: [:index, :show]
+  load_and_authorize_resource
+  before_action :authenticate_user!, except: :index
+
   # GET /books
   # GET /books.json
   def index
     @books = Book.all
+    # @books = @books.select { |b| 
+    #   b.donee_id==user.id
+    # }
   end
 
   # GET /books/1
@@ -63,14 +67,6 @@ class BooksController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_book
-      @book = Book.find_by(id: params[:id])
-    end
-
-  def correct_user
-    @book = current_user.books.find.by(id: params[:id])
-    redirect_to books_path, notice: "Not authorized to edit this pin" if @book.nil?
-  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params

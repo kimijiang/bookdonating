@@ -20,4 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  intro: "Our website meanly severs to people who want to donate their books and people who are lack of books. The website will help you to find a right person for your book. The website will also avoid the situation that the book was doanted to people who don't want them."
   signup: "Sign Up"
+  login: "Log in"
+  home: "Home"
+  about: "About"
+  book: "Books"

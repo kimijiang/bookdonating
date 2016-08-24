@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :add_author_to_books
   resources :books
   devise_for :users
   root 'pages#home'

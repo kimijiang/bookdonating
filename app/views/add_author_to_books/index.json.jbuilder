@@ -1,0 +1,1 @@
+json.array! @add_author_to_books, partial: 'add_author_to_books/add_author_to_book', as: :add_author_to_book
