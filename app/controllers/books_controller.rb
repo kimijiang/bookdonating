@@ -53,6 +53,8 @@ class BooksController < ApplicationController
 
   def donate
     @book.donee = current_user
+    @book.donated_at = Time.now
+
     if @book.save && ( @book.donated_to? current_user )
       redirect_to action: "index"
       flash[:notice] = "book successfully donated to you!"
