@@ -7,9 +7,7 @@
     <div class="box panel panel-default">
       <%= image_tag book.image.url %>
       <div class="panel-body">
-        <%= book.name %>
-        <%= book.isbn %>
-        <%= book.user.email if book.user %>
+        <div><%= book.name %> <%= "(#{book.subject})" if book.subject.present? %></div> 
         <%= link_to 'Show', book_path(book) if (can? :read, book) %>
         <%= link_to 'Edit', edit_book_path(book) if (can? :update, book) %>
         <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } if (can? :destroy, book)%>

@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :books
+
+  resources :books do 
+    member do 
+      put "donate"
+    end
+  end
+
   devise_for :users
   root 'pages#home'
 
