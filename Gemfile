@@ -32,8 +32,6 @@ gem "devise", "~> 4.2.0"
 
 gem "paperclip"
 
-gem "masonry-rails"
-
 gem "aws-sdk"
 
 gem "cancancan", "~> 1.9"
