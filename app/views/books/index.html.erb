@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <%= link_to 'New Book', new_book_path %>
+  <%= link_to (t 'nb'), new_book_path %>
 <% end %>
 
 <div id="books" class="transitions-enabled">
@@ -7,10 +7,11 @@
     <div class="box panel panel-default">
       <%= image_tag book.image.url %>
       <div class="panel-body">
-        <div><%= book.name %> <%= "(#{book.subject})" if book.subject.present? %></div> 
-        <%= link_to 'Show', book_path(book) if (can? :read, book) %>
-        <%= link_to 'Edit', edit_book_path(book) if (can? :update, book) %>
-        <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } if (can? :destroy, book)%>
+        <div><%= book.name %> <%= "(#{book.subject})" if book.subject.present? %></div>
+        <%= link_to (t 'donate'), donate_book_path(book), method: :put unless book.donated? %>
+        <%= link_to (t 'show'), book_path(book) if (can? :read, book) %>
+        <%= link_to (t 'edit'), edit_book_path(book) if (can? :update, book) %>
+        <%= link_to (t 'destroy'), book, method: :delete, data: { confirm: 'Are you sure?' } if (can? :destroy, book)%>
       </div>
     </div>
   <% end %>

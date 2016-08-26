@@ -23,11 +23,11 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
             <% if user_signed_in? %>
-                <%= link_to('My donations', books_path(donor: current_user.id), 
+                <%= link_to("#{t 'My donations'}", books_path(donor: current_user.id), 
                   class: "btn btn‐primary btn‐lg") %>
-                <%= link_to('My received books', books_path(donee: current_user.id), 
+                <%= link_to("#{t 'My received books'}", books_path(donee: current_user.id), 
                   class: "btn btn‐primary btn‐lg") %>
-                <%= link_to('Logout', destroy_user_session_path, :method => :delete, 
+                <%= link_to("#{t 'Logout'}", destroy_user_session_path, :method => :delete, 
                   class: "btn btn‐primary btn‐lg") %>
 
             <% else %>
