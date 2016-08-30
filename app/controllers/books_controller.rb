@@ -7,12 +7,16 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
 
-    if params[:donor].to_i  == current_user.id
-      @books = @books.select{ |b| b.user == current_user}
-    elsif params[:donee].to_i == current_user.id
-      @books = @books.select{ |b| b.donee == current_user}
+    if current_user.present?
+      if params[:donor]  == current_user.id.to_s
+        @books = @books.select{ |b| b.user == current_user}
+      elsif params[:donee] == current_user.id.to_s
+        @books = @books.select{ |b| b.donee == current_user}
+      else
+        @books = Book.all.reject{ |b| b.donated_to? current_user}
+      end
     else
-      @books = Book.all.reject{ |b| b.donated_to? current_user}
+      Book.all
     end
 
     # @books = @books.select { |b| 
