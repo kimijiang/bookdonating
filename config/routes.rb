@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :books
+
+  resources :books do 
+    member do 
+      put "donate"
+    end
+  end
+
   devise_for :users
   root 'books#index'
 
@@ -15,6 +21,8 @@ Rails.application.routes.draw do
     get "pricing" => "pages#pricing"
     get "index" => "books#index"
 
+
+    get "pricing" => "pages#pricing"
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

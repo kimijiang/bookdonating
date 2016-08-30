@@ -1,14 +1,30 @@
 <%= image_tag @book.image.url %>
 
 <p>
-  <strong>Name:</strong>
+  <strong><%= t('name'); %>:</strong>
   <%= @book.name %>
 </p>
 
 <p>
-  <strong>Isbn:</strong>
+  <strong>ISBN(<%= t('isbn'); %>):</strong>
   <%= @book.isbn %>
 </p>
 
-<%= link_to 'Edit', edit_book_path(@book) if (can? :update, @book)%> |
-<%= link_to 'Back', books_path %>
+<p>
+  <strong><%= t('age'); %>:</strong>
+  <%= @book.age %>
+</p>
+
+<p>
+  <strong><%= t('subject'); %>:</strong>
+  <%= @book.subject %>
+</p>
+
+<p>
+  <strong><%= t('des'); %>:</strong>
+  <%= @book.description %>
+</p>
+
+<%= link_to (t 'donate'), donate_book_path(@book), method: :put unless @book.donated? %> |
+<%= link_to (t 'edit'), edit_book_path(@book) if (can? :update, @book)%> |
+<%= link_to (t 'back'), books_path %>
