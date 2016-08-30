@@ -2,7 +2,7 @@
   <%= link_to 'New Book', new_book_path %>
 <% end %>
 
-<div id="books" class="transitions-enabled">
+<div id="books" class="transitions-enabled data-columns">
   <% @books.each do |book| %>
     <div class="box panel panel-default">
       <%= image_tag book.image.url %>

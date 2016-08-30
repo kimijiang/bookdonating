@@ -4,13 +4,21 @@
   <title>Project</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!--google webfonts-->
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-	
+	<%= render 'layouts/top' %>
 
-	<%= render 'layouts/header' %>
 	<div class="container">
 		<% flash.each do |name, msg| %>
 			<%= content_tag(:div, msg, class:"alert alert-info") %>
@@ -18,6 +26,8 @@
 	</div>
 	
 	<%= yield %>
+
+  <%= render 'layouts/footer' %>
 
 </body>
 </html>
