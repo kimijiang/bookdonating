@@ -16,20 +16,7 @@
       <div id="fh5co-board" data-columns>
 
         <% @books.each do |book| %>
-          <div class="item">
-            <div class="animate-box">
-
-              <a href="<%=book_path(book)%>" class="image-popup fh5co-board-img"> <%= image_tag book.image.url %></a>
-              <div class="fh5co-desc">
-                <div><%= book.name %> <%= "(#{book.subject})" if book.subject.present? %></div>
-        		<%= link_to (t 'donate'), donate_book_path(book), method: :put unless book.donated? %>
-        		<%= link_to (t 'show'), book_path(book) if (can? :read, book) %>
-        		<%= link_to (t 'edit'), edit_book_path(book) if (can? :update, book) %>
-       		 	<%= link_to (t 'destroy'), book, method: :delete, data: { confirm: 'Are you sure?' } if (can? :destroy, book)%>
-              </div>
-
-            </div>
-          </div>
+          <%= render book %>
         <% end %>
 
       </div>
