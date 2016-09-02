@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   # Example of regular route:
     get "about" => "pages#about"
     get "contact" => "pages#contact"
-    get "pricing" => "pages#pricing"
+    get "features" => "pages#features"
     get "home" => "books#index"
     get "profile" => "pages#profile"
 
