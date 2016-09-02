@@ -15,9 +15,7 @@
 
       <div id="fh5co-board" data-columns>
 
-        <% @books.each do |book| %>
-          <%= render book %>
-        <% end %>
+        <%= render partial: :book, collection: @books, locals: { hide_edit: true } %>
 
       </div>
 
