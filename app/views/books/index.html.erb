@@ -4,7 +4,7 @@
     <div class="row">
 
       <% if user_signed_in? %>
-        <%= link_to (t 'nb'), new_book_path %>
+        <%= link_to (t 'nb'), new_book_path, class: "btn btn‐primary btn‐lg" %>
       <% else %>
         <%= link_to "#{t 'login'}", new_user_session_path, class: "btn btn‐primary btn‐lg" %>
     <% end %>
