@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     end
   end
 
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'registrations' }
   root 'books#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -23,6 +23,8 @@ Rails.application.routes.draw do
     get "profile" => "pages#profile"
 
     get "pricing" => "pages#pricing"
+
+
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
