@@ -59,7 +59,10 @@ en:
   cyp: "Change your password"
   home address : "Home address"
   wd: "Why donate"
-
+  first n: "First name"
+  last n: "Last name"
+  ages: "Age"
+  gender: "Gender"
 
 
 

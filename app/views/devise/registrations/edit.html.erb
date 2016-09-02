@@ -4,6 +4,26 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label "#{t 'first n'}" %><br />
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label "#{t 'last n'}" %><br />
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label "#{t 'ages'}" %><br />
+    <%= f.text_field :age %>
+  </div>
+
+  <div class="field">
+    <%= f.label "#{t 'gender'}" %><br />
+    <%= f.text_field :gender %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
