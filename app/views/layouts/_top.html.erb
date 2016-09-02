@@ -3,11 +3,11 @@
   <h1 class="fh5co-logo"><a class="navbar-brand" href="/home">Book Donation</a></h1>
   <ul>
     <li class="active"><a href="/">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="pricing.html"><%= t('wd') %></a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/pricing.html"><%= t('wd') %></a></li>
+    <li><a href="/contact.html">Contact</a></li>
     <% if current_user.present?%>
-      <li><a href="profile.html">Profile</a></li>
+      <li><a href="/profile.html">Profile</a></li>
       <li><%= link_to "#{t 'logout'}", destroy_user_session_path, :method => :delete %></li>
     <% else %>
       <li><%= link_to "#{t 'login'}", new_user_session_path %></li>
