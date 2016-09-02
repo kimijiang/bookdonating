@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     get "about" => "pages#about"
     get "contact" => "pages#contact"
     get "pricing" => "pages#pricing"
-    get "index" => "books#index"
+    get "home" => "books#index"
     get "profile" => "pages#profile"
 
     get "pricing" => "pages#pricing"
